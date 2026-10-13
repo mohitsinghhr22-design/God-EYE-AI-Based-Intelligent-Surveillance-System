@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+        <title>GOD EYE PAGE</title>
+          
+        <link rel="stylesheet" href="index.css">
+ 
+    </head>
+    <body>
+        <div id="dateTime"></div>
+<div id="systemStatus"></div>
+        <header>
+            <h1>👁️ GOD EYE</h1>
+            <nav>
+                <a href="#dashboard">Dashboard</a>
+                <a href="#camera">Camera</a>
+                <a href="#face">Face detection</a>
+                <a href="#alerts">Alerts</a>
+                <a href="#location">Location</a>
+                <a href="#activity">Activity</a>
+            </nav>
+            <input
+             type="text"
+             id="searchInput"
+            placeholder="Search..."
+>
+            </header>
+            <section id="dashboard">
+            <h2>Dashboard</h2>
+            <p><strong>System status:</strong>online 🟢</p>
+            <p><strong>Active cameras:</strong> 1</p>
+            <p><strong>People detected:</strong> <span id="peopleDetected">0</span></p>
+            <p><strong>Active alerts:</strong> <span id="activeAlerts">0</span></p>
+            <p><strong>System uptime:</strong> 99.9%</p>
+            <p><strong>Security score:</strong> <span id="securityScore">90%</span></p>
+
+          <p><strong>Online users:</strong> <span id="onlineUsers">120</span></p>
+            </section>
+            <hr>
+            <section id="camera">
+
+               <h2>📹 Live Camera Monitoring</h2>
+               <div>
+                <h3>Camera 1</h3>
+                <P>Status: online</P>
+            <img id="cameraFeed" src="http://127.0.0.1:5000/video_feed" width="400" height="250">
+            <button id="fullscreenButton">⛶ Full Screen</button>
+            <button id="cameraOnOffButton">Camera OFF</button>   
+             </div>
+             <div>
+                <h3>Camera 2</h3>
+                <P>Status: online</P>
+                <video width="400" height="250" controls>
+                    <source src="" type="video/mp4">
+                    your browser does not support video.
+                    </video>          
+             </div>
+            </section>
+            <section id="face">
+
+    <h2>Face Detection</h2>
+
+    <p>
+        Face Detection Status:
+        <strong id="faceStatus">Active</strong>
+    </p>
+
+    <p>
+        Faces Detected:
+        <strong id="faceCount">0</strong>
+    </p>
+
+    <table border="1">
+
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Person</th>
+                <th>Status</th>
+                <th>Confidence</th>
+            </tr>
+        </thead>
+
+        <tbody id="faceTableBody">
+
+            <tr>
+                <td colspan="4">
+                    No face detected
+                </td>
+            </tr>
+
+        </tbody>
+
+    </table>
+
+</section>
+<section id="objects">
+    <h2>Object Detection</h2>
+
+    <p>
+        Objects Detected:
+        <strong id="objectTotal">0</strong>
+    </p>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Object</th>
+                <th>Count</th>
+                <th>Confidence</th>
+            </tr>
+        </thead>
+
+        <tbody id="objectTableBody">
+            <tr>
+                <td colspan="3">No objects detected</td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+            <hr>
+          <section id="alerts">
+    <h2>Security Alerts</h2>
+
+    <p>
+        <strong>Active Alerts:</strong>
+        <span id="alertCount">0</span>
+    </p>
+
+    <ul id="alertList">
+        <li>No active alerts</li>
+    </ul>
+</section>
+            <hr>
+            <section id="location">
+                <h2>Location Tracking</h2>
+               <p>Tracking Status: Active</p>
+               <p>Current area: GIDA</p>
+               <p>latitude: <span id="latitude">Not available</span></p>
+                <p>Longitude: <span id="longitude">Not available</span></p>
+
+          <button id="locationButton">Get Location</button>
+            </section>
+            <hr>
+            <section id="activity">
+
+    <h2>Activity Monitoring</h2>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Time</th>
+                <th>Person ID</th>
+                <th>Activity</th>
+                <th>Camera</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+
+        <tbody id="activityTableBody">
+            <tr>
+                <td colspan="5">No activity detected</td>
+            </tr>
+        </tbody>
+
+    </table>
+
+</section>
+     <section id="controlPanel">
+    <h2>Control panel</h2>
+
+    <button id="cameraButton">Start Monitoring</button>
+
+    <button id="stopButton">Stop Monitoring</button>
+
+    <button id="alertButton">Activate Alert</button>
+
+    <button id="refreshButton">Refresh System</button>
+    <button id="logoutButton">Logout</button>
+</section>
+            <hr>
+           <section id="login">
+
+    <h2>🔐 Login</h2>
+
+    <form id="loginForm">
+
+        <label>Username:</label>
+        <input
+            type="text"
+            id="loginUsername"
+            placeholder="Enter username"
+            required
+        >
+
+        <label>Password:</label>
+        <input
+            type="password"
+            id="loginPassword"
+            placeholder="Enter password"
+            required
+        >
+
+        <button type="submit">Login</button>
+
+    </form>
+
+    <p id="loginMessage"></p>
+
+    <p class="signup-text">
+        Don't have an account?
+        <a href="#signup" id="showSignup">Sign Up</a>
+    </p>
+
+</section>
+
+
+<!-- ================= SIGN UP ================= -->
+
+<section id="signup">
+
+    <h2>📝 Create Account</h2>
+
+    <form id="signupForm">
+
+        <label>Username:</label>
+        <input
+            type="text"
+            id="signupUsername"
+            placeholder="Create username"
+            required
+        >
+
+        <label>Password:</label>
+        <input
+            type="password"
+            id="signupPassword"
+            placeholder="Create password"
+            required
+        >
+
+        <label>Confirm Password:</label>
+        <input
+            type="password"
+            id="confirmPassword"
+            placeholder="Confirm password"
+            required
+        >
+
+        <button type="submit">Create Account</button>
+
+    </form>
+
+    <p id="signupMessage"></p>
+
+    <p class="signup-text">
+        Already have an account?
+        <a href="#login" id="showLogin">Login</a>
+    </p>
+
+</section>
+   
+            <hr>
+            <footer>
+                <p>God eye project</p>
+                <p>Ai powered context aware intelligent system</p>
+            </footer>
+            <script src="index.js"></script>
+            </body>
+            </html>
+
+
